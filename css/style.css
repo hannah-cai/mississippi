@@ -46,9 +46,10 @@ animation-delay: $itemDuration + s;
 
 html {
     font-family: 'Amiri', serif;
-    color: white;
+    color: black;
     font-size: 2vw;
     font-weight: 400;
+/*    background-color: black;*/
 /*
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
@@ -92,8 +93,10 @@ section {
     */
     width: 100vw;
     height: 100vh;
+/*
     background-repeat: no-repeat;
     background-size: cover;
+*/
 /*    filter: url("#turbulence-fast");*/
     /*                filter: blur(2px);*/
 
