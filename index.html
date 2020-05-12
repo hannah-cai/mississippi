@@ -1,0 +1,216 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>the mississippi river empties into the gulf</title>
+        <meta name="description" content="an interactive experience of Lucille Clifton's poem">
+        <meta name="author" content="Hannah Cai and Danny Cho">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--        links-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--        <link rel="icon" type="image/png" href="favicon.png">-->
+
+        <script type="text/javascript" src="jquery-3.4.0.min.js"></script>
+        <script type="text/javascript" src="jquery.ripples.js"></script>
+
+    </head>
+    <body>
+        <div id="ripple"></div>
+
+
+        <section>
+            <h1 id="title">the mississippi river empties into the gulf</h1>
+            <p id="author">a poem by Lucille Clifton</p>
+            <p class="description">scroll to continue</p>
+        </section>
+        <section>
+            <p id="pg1-1">the mississippi river empties into the gulf</p>
+            <p id="pg1-2">and the gulf enters the sea and so forth,</p>
+            <p id="pg1-3">none of them emptying anything,</p>
+        </section>
+        <section>
+            <p id="pg2-1">all of them carrying yesterday</p>
+            <p id="pg2-2">forever on their white tipped backs,</p>
+            <p id="pg2-3">all of them dragging forward tomorrow.</p>
+        </section>
+        <section>
+            <div id="ring-1">
+                <svg  id="pg3-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="50vw" height="100vh" viewBox="-400 -400 800 800">
+                    <!--                    <circle cx="0" cy="0" r="20vw" fill="red"/>-->
+                    <defs>
+                        <path  id="circlePath" d=" M -325 0 a 250 250 0 0 1 650,0 a 100,100 0 0,1 -650,0 "/>
+                    </defs>
+                    <use xlink:href="#circlePath" fill="none"/>
+                    <text>
+                        <textPath xlink:href="#circlePath">it is the great circulation
+                            of the earth's body, like the blood
+                            of the gods,</textPath>
+                    </text>
+                </svg>
+            </div>
+
+            <div id="ring-2">
+                <svg  id="pg3-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="50vw" height="100vh" viewBox="-400 -400 800 800">
+                    <defs>
+                        <path  id="circlePath" d=" M -325 0 a 250 250 0 0 1 650,0 a 100,100 0 0,1 -650,0 "/>
+                    </defs>
+                    <use xlink:href="#circlePath" fill="none"/>
+                    <text>
+                        <textPath xlink:href="#circlePath">this river in which the past
+                            is always flowing.</textPath>
+                    </text>
+                </svg>
+            </div>
+        </section>
+
+        <section style="height:200vh">
+            <div id="whirlpool">
+                <script>
+                    let div = document.getElementById("whirlpool");
+                    let paths = [];
+
+                    for (let i = 0; i < 17; i++) {
+                        let r = ((i + 1) * 25) + (4 * (i * i));
+                        let pathID = "path-" + (i + 1);
+
+                        let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                        svg.setAttributeNS(null, "id", "pg4-" + (i + 1));
+                        svg.setAttributeNS(null, "width", "100vw");
+                        svg.setAttributeNS(null, "height", "100vh");
+                        svg.setAttributeNS(null, "viewBox", "-400 -400 800 800");
+
+                        let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+                        let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        path.setAttributeNS(null, "id", pathID);
+                        let d = 'M -' + (r/2) + ' 0 a ' + (r/2) + ',' + (r/2) + ' 0 0 1 ' + r + ',0 a ' + (r/2) + ',' + (r/2) + ' 0 0,1 -' + r + ',0 ';
+                        path.setAttributeNS(null, "d",
+                                            d);
+                        defs.appendChild(path);
+                        svg.appendChild(defs);
+
+                        let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+                        use.setAttributeNS(null, "href", "#" + pathID);
+                        use.setAttributeNS(null, "fill",  "none");
+                        svg.appendChild(use);
+
+                        let t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        let tPath = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
+                        tPath.setAttributeNS(null, "href", "#" + pathID); 
+                        tPath.setAttributeNS(null, "class", "spin"); 
+                        tPath.innerHTML = "every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round. every water is the same water coming round.";
+                        t.appendChild(tPath);
+                        svg.appendChild(t);
+
+                        div.appendChild(svg);
+                        
+//                        $("#" + pathID).css("opacity", String(1/i));
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section>
+            <p id="pg5-1">every day someone is standing on the edge</p>
+            <p id="pg5-2">of this river, staring into time,</p>
+            <p id="pg5-3">whispering mistakenly:</p>
+        </section>
+        <section id="noRipple">
+            <div id="infinity">
+                <svg id="pg6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="200vw" height="60vh" viewBox="-500 -50 600 500">
+                    <defs>
+                        <path id="infinityPath" d="M506.15,221.42C455.73,274.26,330.26,389.5,195,389.5,87.58,389.5.5,302.42.5,195S87.58.5,195,.5c165.5,0,334.5,195,334.5,195s159,194,334.5,194c107.42,0,194.5-87.08,194.5-194.5S971.42.5,864,.5C743.68.5,621.5,103.57,563.77,159.84"/>
+                    </defs>
+                    <use xlink:href="#infinityPath" fill="none"/>
+                    <text>
+                        <textPath id="infinityAnimate" xlink:href="#infinityPath">only here. only now. only here. only now. only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.  only here. only now.</textPath>
+                        <animate xlink:href="#infinityAnimate" attributeName="startOffset" dur="30s" 
+                                 keyTimes="0;1" values="-800;0" repeatCount="indefinite"/>
+                    </text>
+                </svg>
+                <!--
+<script>
+var infinityPath = document.querySelector("#infinityAnimate");
+var d = new Date();
+var m = d.getMilliseconds();
+infinityPath.setAttribute("startOffset", m);
+</script>
+-->
+            </div>
+
+        </section>
+        <!--        </div>-->
+
+    </body>
+    <svg>
+        <!--       turbulence-->
+        <filter id="turbulence-fast" x="0" y="0" width="200%" height="100%">
+            <feTurbulence id="sea-filter" numOctaves="1" seed="1" baseFrequency="0.01" type="fractalNoise"></feTurbulence>
+            <feDisplacementMap scale="10" in="SourceGraphic"></feDisplacementMap>
+            <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="2s" 
+                     keyTimes="0;0.5;1" values="0;0.015;0" repeatCount="indefinite"/>
+        </filter>
+
+        <filter id="turbulence-2" x="0" y="0" width="200%" height="100%">
+            <feTurbulence id="mouseClick" numOctaves="1" seed="2" baseFrequency="0.01" type="fractalNoise"></feTurbulence>
+            <feDisplacementMap scale="30" in="SourceGraphic"></feDisplacementMap>
+            <animate xlink:href="#mouseClick" attributeName="baseFrequency" dur="2s" 
+                     keyTimes="0;0.5;1" values="0;0.015;0" repeatCount="indefinite"/>
+        </filter>
+        <!--        gooey-->
+        <filter id="gooey">
+            <feGaussianBlur in='SourceGraphic', stdDeviation='1', result='blur'></feGaussianBlur>
+            <feColorMatrix in='blur', mode='matrix', values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -8', result='gooey')></feColorMatrix>
+            <feComposite in='SourceGraphic', in2='gooey', operator='atop'></feComposite>
+            <!--
+<animate attributeName="stdDeviation" dur="2s" 
+keyTimes="0;1" values="0; " repeatCount="indefinite"/>
+-->
+        </filter>
+    </svg>
+
+    <script>
+        $(window).scroll(function() {
+            $("section").css("filter", "url('#turbulence-fast')");
+
+            clearTimeout($.data(this, 'scrollTimer'));
+            $.data(this, 'scrollTimer', setTimeout(function() {
+                //                $("section").css("filter", "url('#turbulence-slow')");
+                $("section").css("filter", "none");
+            }, 500));
+            $(".description").fadeOut(1000);
+        });
+
+        $(window).click(function() {
+            $("section").css("filter", "url('#turbulence-2')");
+
+            clearTimeout($.data(this, 'scrollTimer'));
+            $.data(this, 'scrollTimer', setTimeout(function() {
+                //                $("section").css("filter", "url('#turbulence-slow')");
+                $("section").css("filter", "none");
+            }, 1000));
+        });
+        
+        $("text").attr("fill", "white");
+        
+//        var $rippleBg = $("#ripple");
+//        $("#ripple").ripples({resolution: 300,
+//                                 dropRadius: 25,
+//                                 perturbance: 0.05,});
+//
+//        setInterval(function() {
+//            var x = Math.random() * $rippleBg.outerWidth();
+//            var y = Math.random() * $rippleBg.outerHeight();
+//            var dropRadius = 25;
+//            var strength = 0.05;
+//            $rippleBg.ripples('drop', x, y, dropRadius, strength);
+//        }, 5000);
+
+        
+
+        //                $(window).mousemove(function() {
+        //                    $("section").animate({
+        //                        opacity: 'toggle',
+        //                    });
+        //                });
+    </script>
+</html>
