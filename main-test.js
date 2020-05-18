@@ -96,11 +96,11 @@ function init() {
 function onMouseWheel( event ) {
 
 	event.preventDefault();
-	camera.position.z -= event.deltaY * 0.005;
+	camera.position.z -= event.deltaY * 0.1;
   
   // prevent scrolling beyond a min/max value
   
-  camera.position.clampScalar( -100, 100 );
+  camera.position.clampScalar( -500, 100 );
 
 }
 
