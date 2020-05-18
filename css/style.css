@@ -46,7 +46,7 @@ animation-delay: $itemDuration + s;
 
 html {
     font-family: 'Amiri', serif;
-    color: black;
+    color: white;
     font-size: 2vw;
     font-weight: 400;
 /*    background-color: black;*/
@@ -194,6 +194,10 @@ filter: url("#turbulence");
 }
 
 /*page 3*/
+textPath {
+    fill: white;
+}
+
 @keyframes spin-1 {
     from {
         transform: rotate(90deg);
@@ -349,3 +353,9 @@ svg text {
     left: 0%;
 }
 
+#mississippi {
+    z-index: -100;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+}
