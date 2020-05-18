@@ -46,7 +46,7 @@ animation-delay: $itemDuration + s;
 
 html {
     font-family: 'Amiri', serif;
-    color: white;
+    color: steelblue;
     font-size: 2vw;
     font-weight: 400;
 /*    background-color: black;*/
@@ -208,7 +208,7 @@ filter: url("#turbulence");
 
 /*page 3*/
 textPath {
-    fill: white;
+    fill: steelblue;
 }
 
 @keyframes spin-1 {
