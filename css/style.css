@@ -87,6 +87,7 @@ html * {
 section {
     scroll-snap-align: center;
     position: relative;
+    opacity: 0.75;
     /*
     top: -2.5%;
     left: -2.5%;
@@ -124,6 +125,7 @@ p:hover {
     transform: translate(-50%, -50%);
     /*                filter: url("#gooey");*/
     font-weight: 400;
+    color: steelblue;
 }
 
 /*
@@ -138,9 +140,20 @@ filter: url("#turbulence");
     top: 55%;
     line-height: 1;
 /*    font-size: 16pt;*/
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     transform: translate(-50%, -50%);
     /*                filter: url("#gooey");*/
+}
+
+#chrome {
+    font-style: italic;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    line-height: 1;
+    font-size: 1.25vw;
+    transform: translate(-50%, -50%);
+/*    opacity: 0.25;*/
 }
 
 .description {
@@ -150,7 +163,7 @@ filter: url("#turbulence");
     top: 90%;
     line-height: 1;
 /*    font-size: 16pt;*/
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     transform: translate(-50%, -50%);
     filter: url("#turbulence-fast");
 }
